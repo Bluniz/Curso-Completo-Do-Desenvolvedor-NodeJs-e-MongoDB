@@ -1,11 +1,14 @@
 const app = require("./config/server");
-const rotaNoticias = require("./app/routes/noticias");
-const rotaHome = require("./app/routes/home");
-const rotaFormularioInclusaoNoticias = require("./app/routes/noticias");
 
-rotaNoticias(app);
-rotaHome(app);
-rotaFormularioInclusaoNoticias(app);
+/* 
+  ! Se você estiver importando uma função, ao colocar parenteses ao lado
+  ! executará a função de imediato, e como podem ver no exemplo abaixo,
+  ! executa e ainda passa um parametro.
+*/
+const rotaNoticias = require("./app/routes/noticias")(app);
+const rotaHome = require("./app/routes/home")(app);
+const rotaFormularioInclusaoNoticias = require("./app/routes/noticias")(app);
+
 //const express = require("express");
 //? const express = require('express')();
 /*
@@ -16,7 +19,6 @@ rotaFormularioInclusaoNoticias(app);
 //app.set('view engine', 'ejs')
 
 //* Este metodo fica escutando requisições em uma determinada porta
-
 app.listen(3000, function () {
   console.log("funfou");
 });
