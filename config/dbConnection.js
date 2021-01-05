@@ -5,8 +5,10 @@ const mySql = require("mysql");
 //* user -> Usuário que você cadastrou em seu servidor.
 //* password -> Senha que você cadastrou em seu servidor.
 //* database -> A database em seu servidor que deseja criar conexão.
-module.exports = function () {
-  const connection = mySql.createConnection({
+
+//? Função criada como Wrapper para que não estabeleça com o auto loading a conexão com o banco toda hora.
+const connMySQL = function () {
+  return mySql.createConnection({
     host: "localhost",
     user: "root",
     password: "1234",
@@ -22,6 +24,8 @@ module.exports = function () {
    !FLUSH PRIVILEGES;
 
     */
+};
 
-  return connection;
+module.exports = function () {
+  return connMySQL;
 };

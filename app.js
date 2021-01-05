@@ -5,9 +5,9 @@ const app = require("./config/server");
   ! executará a função de imediato, e como podem ver no exemplo abaixo,
   ! executa e ainda passa um parametro.
 */
-const rotaNoticias = require("./app/routes/noticias")(app);
-const rotaHome = require("./app/routes/home")(app);
-const rotaFormularioInclusaoNoticias = require("./app/routes/noticias")(app);
+//const rotaNoticias = require("./app/routes/noticias")(app);
+//const rotaHome = require("./app/routes/home")(app);
+//const rotaFormularioInclusaoNoticias = require("./app/routes/noticias")(app);
 
 //const express = require("express");
 //? const express = require('express')();
