@@ -1,10 +1,13 @@
 const express = require("express");
 const consign = require("consign");
+const bodyParser = require("body-parser");
 
 const app = express();
 
 app.set("view engine", "ejs");
 app.set("views", "./app/views");
+app.use(bodyParser.urlencoded({ extended: true }));
+
 //* Como faz a inclusão no app.js, a rota onde irá setar a nova localização da views
 //* é apartir da localização do arquivo.
 
