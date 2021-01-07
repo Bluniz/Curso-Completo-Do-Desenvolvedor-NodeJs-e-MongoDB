@@ -5,10 +5,11 @@ module.exports = function (app) {
     const dbConnection = app.config.dbConnection;
 
     const connection = dbConnection();
-    const noticiasModel = app.app.models.noticiasModel;
+    const noticiasModel = new app.app.models.noticiasDAO(connection);
 
-    noticiasModel.getNoticias(connection, function (error, result) {
+    noticiasModel.getNoticias( function (error, result) {
       //! O EJS permite enviar dados como segundo parametro e na view identificar os dados.
+     
       res.render("noticias/noticias", { noticias: result });
     });
 
