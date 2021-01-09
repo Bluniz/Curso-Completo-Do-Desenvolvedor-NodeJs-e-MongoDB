@@ -20,7 +20,7 @@ const app = require("./config/server");
 
 //* Este metodo fica escutando requisições em uma determinada porta
 app.listen(3000, function () {
-  console.log("funfou");
+  console.log("Server ON");
 });
 
 /* 
