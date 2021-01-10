@@ -35,7 +35,7 @@ module.exports.noticias_salvar = function (app, req, res) {
 
   const noticiasModel = new app.app.models.noticiasDAO(connection);
 
-  noticiasModel.salvarNoticia(noticias, function (error, result) {
+  noticiasModel.saveNotice(noticias, function (error, result) {
     res.redirect("/noticias");
   });
 };
